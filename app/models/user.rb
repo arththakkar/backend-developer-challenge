@@ -5,10 +5,9 @@ class User < ApplicationRecord
 
 	# Validations
 	validates :username, presence: true, uniqueness: true
-	validates :password, presence: true, confirmation: true
+	validates :password, presence: true
 
 	def generate_token
-		self.authentication_token = SecureRandom.urlsafe_base64
-		self.save
+		self.update_attribute(:authentication_token, SecureRandom.urlsafe_base64)
 	end
 end

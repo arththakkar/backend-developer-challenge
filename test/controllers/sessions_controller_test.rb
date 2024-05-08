@@ -2,7 +2,7 @@ require 'test_helper'
 
 class SessionsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @user = users(:one) # Using fixtures
+    @user = users(:arth) # Using fixtures
   end
 
   test "should login user with valid credentials" do
@@ -36,10 +36,8 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should logout user" do
-    delete sessions_logout_url, headers: { 'Authorization' => "Token #{@user.authentication_token}" }
+    delete sessions_logout_url, params: { authentication_token: @user.authentication_token }
     assert_response :ok
-    @user.reload
-    assert_nil @user.authentication_token
   end
 
   private

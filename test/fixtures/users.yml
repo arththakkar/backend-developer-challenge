@@ -1,9 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+arth:
   username: arth_thakkar
   password_digest: <%= BCrypt::Password.create('secret') %>
+  authentication_token: <%= SecureRandom.urlsafe_base64 %>
 
-two:
+jon:
   username: jon_snow
   password_digest: <%= BCrypt::Password.create('password') %>
+  authentication_token: <%= SecureRandom.urlsafe_base64 %>

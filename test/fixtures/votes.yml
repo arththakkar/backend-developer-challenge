@@ -1,9 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  user: one
-  candidate_type: MyString
+arths_vote:
+  user: arth
+  candidate_type: "A"
+  created_at: <%= 10.minutes.ago %>
 
-two:
-  user: two
-  candidate_type: MyString
+jons_vote:
+  user: jon
+  candidate_type: "B"
+  created_at: <%= 1.week.ago %>
